@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+        function sleep(ms) {
+            return new Promise(resolve => setTimeout(resolve, ms));
+        }
+
+        // Countdown function
+        async function countdown() {
+            // Display the countdown
+            for (let i = 10; i >= 1; i--) {
+                document.getElementById('countdown').textContent = i;
+                await sleep(1000); // Sleep for 1 second
+            }
+
+            // Display the greeting
+            document.getElementById('countdown').textContent = 'Happy Independence Day!';
+        }
+    </script>
+
+</head>
+
+<body onload="countdown()">
+    <style>
+        .countdown1 {
+            margin: auto;
+            height: 50%;
+            width: 50%;
+            background-color: aqua;
+            text-align: center;
+        }
+    </style>
+
+    <div class="countdown1">
+        <h1>Countdown:<h2 id="countdown"></h2>
+        </h1>
+    </div>
+
+
+</body>
+
+</html>
+
+<!-- <!DOCTYPE html>
+<html>
+
+<head>
+    <title>Countdown</title>
+    <script>
+        // Countdown function
+        function countdown(seconds, callback) {
+            if (seconds < 0) {
+                callback();
+            } else {
+                document.getElementById("countdown").innerHTML = seconds;
+                setTimeout(function () {
+                    countdown(seconds - 1, callback);
+                }, 1000);
+            }
+        }
+
+        // Countdown initialization
+        countdown(10, function () {
+            document.getElementById("countdown").innerHTML = "Happy Independence Day";
+        });
+    </script>
+</head>
+
+<body>
+    <h1 id="countdown">10</h1>
+</body>
+
+</html> -->
